@@ -1,6 +1,16 @@
+import { PokemonList } from './components/PokemonList.jsx'
+import { Header } from './components/Header.jsx'
+import { Footer } from './components/Footer.jsx'
+
 function App () {
   return (
-    <h1>Pokedex</h1>
+    <>
+      <Header />
+      <main className='min-h-[90vh] bg-[url("./assets/pokedex.png")] bg-no-repeat bg-cover flex justify-center items-center'>
+        <PokemonList />
+      </main>
+      <Footer />
+    </>
   )
 }
 

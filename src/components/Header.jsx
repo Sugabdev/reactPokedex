@@ -1,6 +1,6 @@
 export function Header () {
   return (
-    <header className='min-h-[100vh] bg-amber-400 flex gap-8 justify-center items-center text-6xl p-4'>
+    <header className='min-h-[10vh] bg-amber-400 flex gap-8 justify-center items-center text-6xl p-4'>
       <img
         src='src/assets/pokeball.svg'
         alt='pokeball icon for the pokedex'

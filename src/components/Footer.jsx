@@ -32,7 +32,7 @@ export function Footer () {
       </section>
       <section>
         <strong className='text-2xl'>2025 copywright | All rights reserverd. Pokédex.</strong>
-        <p>Developed using <a href='https://pokeapi.co/'>pokeapi.</a></p>
+        <p className='mt-2'>Developed using <a href='https://pokeapi.co/'>pokeapi. By Lgsus.</a></p>
       </section>
     </footer>
   )

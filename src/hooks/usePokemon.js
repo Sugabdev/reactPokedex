@@ -19,7 +19,7 @@ export function usePokemon () {
 
         const image = data.sprites.front_default
         const types = data.types.map(obj => {
-          return obj.type.name
+          return obj.type
         })
 
         return { ...pokemon, id, image, types }

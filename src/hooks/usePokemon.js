@@ -18,11 +18,10 @@ export function usePokemon () {
         const data = await res.json()
 
         const image = data.sprites.front_default
-        const types = data.types.map(obj => {
-          return obj.type
-        })
+        const types = data.types.map(obj => { return obj.type })
+        const abilities = data.abilities.map(obj => { return obj.ability })
 
-        return { ...pokemon, id, image, types }
+        return { ...pokemon, id, image, types, abilities }
       })
 
       const result = await Promise.all(pokemonDetailedData)

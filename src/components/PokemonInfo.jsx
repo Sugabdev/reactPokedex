@@ -38,7 +38,7 @@ export function PokemonInfo () {
       {data &&
         <>
           <div className='w-full'>
-            <p className='text-center bg-fuchsia-900 rounded-lg px-2 py-1 mb-2'>{data.name}</p>
+            <p className='text-center bg-gradient-to-t from-indigo-500 to-fuchsia-600 rounded-lg px-2 py-1 mb-2 font-semibold'>{data.name}</p>
             <figure className='bg-white rounded-lg flex justify-center'>
               <img
                 src={data.image}
@@ -47,13 +47,24 @@ export function PokemonInfo () {
               />
             </figure>
           </div>
-          <article className='w-full flex flex-wrap justify-start gap-4'>
-            <p className='bg-fuchsia-900 rounded-lg px-2 py-1'>ID: {data.id}</p>
-            {
+          <article className='w-full flex flex-col justify-start items-start gap-4 font-semibold'>
+            <p className='bg-gray-600 rounded-lg px-2 py-1'>ID: {data.id}</p>
+            <span className='flex gap-4 items-center'>
+              Types:
+              {
               data.types.map(type => {
                 return <p key={type.url} style={{ backgroundColor: checkTypeColor(type) }} className='rounded-lg px-2 py-1'>{type.name}</p>
               })
             }
+            </span>
+            <span className='flex gap-4 items-center'>
+              Abilities:
+              {
+              data.abilities.map(ability => {
+                return <p key={ability.url} className='text-center bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg px-2 py-1'>{ability.name}</p>
+              })
+            }
+            </span>
           </article>
         </>}
     </aside>

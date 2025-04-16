@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react'
 
-export function usePokemon () {
-  const POKEMON_JSON = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12'
-
+export function usePokemon (pokemonJson) {
   const [pokemons, setPokemons] = useState()
 
   useEffect(() => {
+    if (!pokemonJson) return
+
     const buildingData = async () => {
-      const res = await fetch(POKEMON_JSON)
-      const data = await res.json()
-      const pokemonArrData = data.results
+      const pokemonArrData = pokemonJson.results
 
       const pokemonDetailedData = pokemonArrData.map(async (pokemon) => {
         const id = parseInt(pokemon.url.slice(33).split('/').join(''))
@@ -28,6 +26,6 @@ export function usePokemon () {
       setPokemons(result)
     }
     buildingData()
-  }, [])
+  }, [pokemonJson])
   return { pokemons }
 }

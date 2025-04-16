@@ -1,9 +1,11 @@
-import { usePokemon } from '../hooks/usePokemon'
 import { useContext } from 'react'
+import { usePokemon } from '../hooks/usePokemon'
 import { pokemonData } from '../context/Data.jsx'
+import { pokemonEndpoint } from '../context/Endpoint.jsx'
 
 export function PokemonList () {
-  const { pokemons } = usePokemon()
+  const { pokemonJson } = useContext(pokemonEndpoint)
+  const { pokemons } = usePokemon(pokemonJson)
   const { setData } = useContext(pokemonData)
 
   const handleClick = (event) => {
